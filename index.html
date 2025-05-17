@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquarionPure - Loja de Filtros</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Seções principais */
+        main {
+            padding: 20px;
+            flex: 1;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #007BFF;
+            text-align: center;
+        }
+
+        /* Produtos */
+        .products {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 250px; /* Diminuindo a largura */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex; /* Adicionando flexbox para melhor organizar o conteúdo interno */
+            flex-direction: column;
+            align-items: center; /* Centralizando os itens horizontalmente */
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            max-height: 200px; /* Limitando a altura da imagem para evitar distorções */
+            object-fit: contain; /* Garante que a imagem se ajuste ao espaço mantendo a proporção */
+            margin-bottom: 10px; /* Adicionando margem abaixo da imagem */
+        }
+
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #007BFF;
+            font-weight: bold;
+            margin-bottom: 10px; /* Adicionando margem abaixo do preço */
+        }
+
+        .product button {
+            background-color: #28A745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: auto; /* Empurrando o botão para a parte inferior do bloco */
+        }
+
+        .product button:hover {
+            background-color: #218838;
+        }
+
+        /* Contato */
+        .contact {
+            text-align: center;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto;
+        }
+
+        body main section p {
+            color: #007BFF;
+        }
+
+        /* Estilo para esconder as seções inicialmente */
+        #about, #products, #contact {
+            display: none;
+        }
+
+        /* Estilo para mostrar a seção ativa */
+        .active-section {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>AquarionPure</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about" onclick="showSection('about')">Sobre</a></li>
+                <li><a href="#products" onclick="showSection('products')">Produtos</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="about active-section">
+            <h2>Sobre Nós</h2>
+            <p>Bem-vindo à AquarionPure! Somos especialistas em soluções de purificação de água, oferecendo produtos de alta qualidade para garantir a saúde e o bem-estar de nossos clientes.</p>
+            <p>Nossa missão é fornecer água pura e segura para todos, através de tecnologias inovadoras e um compromisso com a excelência. Nos dedicamos a desenvolver filtros de água que não apenas removem impurezas, mas também preservam os minerais essenciais para o corpo.</p>
+            <p>Com anos de experiência no mercado, a AquarionPure se destaca pelo atendimento personalizado, suporte técnico especializado e uma ampla gama de produtos que atendem às diversas necessidades de residências e empresas.</p>
+        </section>
+
+        <section id="products" class="products">
+            <h2>Nossos Produtos</h2>
+            <div class="product-list">
+                <div class="product">
+                    <img src="assets/imagens/produto1.jpg" alt="Filtro de Água Modelo A">
+                    <h3>Filtro de Água Modelo A</h3>
+                    <p>R$ ***</p>
+                    <p>Nosso modelo básico, ideal para uso doméstico, remove cloro, sedimentos e odores, proporcionando água limpa e saborosa.</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="assets/imagens/produto2.jpg" alt="Filtro de Água Modelo B">
+                    <h3>Filtro de Água Modelo B</h3>
+                    <p>R$ ***</p>
+                    <p>Além dos benefícios do Modelo A, este filtro avançado também reduz a presença de metais pesados e bactérias, garantindo uma água ainda mais pura.</p>
+                    <button>Comprar</button>
+                </div>
+                <div class="product">
+                    <img src="assets/imagens/produto3.jpg" alt="Filtro de Água Modelo C">
+                    <h3>Filtro de Água Modelo C</h3>
+                    <p>R$ ***</p>
+                     <p>O top de linha, com tecnologia de osmose reversa, remove praticamente todas as impurezas da água, incluindo vírus e produtos químicos, para uma água da mais alta qualidade.</p>
+                    <button>Comprar</button>
+                </div>
+            </div>
+             <p>Explore nossa linha completa de filtros de água, projetados para atender às suas necessidades específicas. Temos opções para uso residencial, comercial e industrial. Encontre o filtro perfeito para você!</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco:</p>
+            <p>Email: contato@aquarionpure.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+             <p>Estamos localizados em [Endereço da Empresa]. Visite-nos para conhecer nossos produtos e conversar com nossos especialistas.</p>
+            <p>Para dúvidas, sugestões ou solicitações de orçamento, preencha o formulário abaixo:</p>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 AquarionPure. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+                section.style.display = 'none';
+            });
+
+            // Mostra a seção clicada
+            const targetSection = document.getElementById(id);
+            if (targetSection) {
+                targetSection.classList.add('active-section');
+                targetSection.style.display = 'block';
+            }
+
+            // Impede o comportamento padrão do link (#) de ir para o topo da página
+            event.preventDefault();
+        }
+
+        // Mostra a seção "Sobre" por padrão ao carregar a página
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('about');
+        });
+    </script>
+</body>
+</html>
